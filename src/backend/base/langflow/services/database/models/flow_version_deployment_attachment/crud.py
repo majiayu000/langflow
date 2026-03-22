@@ -42,8 +42,7 @@ async def create_deployment_attachment(
             exc,
         )
         msg = (
-            f"Attachment conflicts with an existing record "
-            f"(flow_version={flow_version_id}, deployment={deployment_id})"
+            f"Attachment conflicts with an existing record (flow_version={flow_version_id}, deployment={deployment_id})"
         )
         raise ValueError(msg) from exc
     await db.refresh(row)
